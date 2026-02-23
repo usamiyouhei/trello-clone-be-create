@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/usamiyouhei/trello-clone-be-create#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.28"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
