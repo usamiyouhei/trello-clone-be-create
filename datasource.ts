@@ -5,6 +5,6 @@ export const AppDataSource = new DataSource({
   database: "trello-clone.sqlite",
   synchronize: true,
   logging: false,
-  entities: [],
+  entities: ["entities/*.entity.ts"],
   migrations: [],
 });
