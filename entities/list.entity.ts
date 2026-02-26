@@ -18,6 +18,7 @@ export class List {
 
   @Column()
   position!: number;
+
   @OneToMany(() => Card, (card) => card.list, { cascade: true })
   cards?: Card[];
 
