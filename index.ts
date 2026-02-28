@@ -18,8 +18,19 @@ app.post("/lists", async (req, res) => {
   try {
     const { title } = req.body;
 
+    const maxPositionListArray = await listRepository.find({
+      order: { position: "DESC" },
+      take: 1,
+    });
+
+    const maxPositionList = maxPositionListArray[0];
+
+    const nextPosition =
+      maxPositionList != null ? maxPositionList.position + 1 : 0;
+
     const list = await listRepository.save({
       title,
+      position: nextPosition,
     });
 
     res.status(201).json(list);
